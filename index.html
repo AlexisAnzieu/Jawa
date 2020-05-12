@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Velta - Préface</title>
+	<meta name="description" content="Projet d'extension auditive et visuelle d'une planète  de l'univers Star Wars : Tatooine" />
+	<meta name="keywords" content="jawa, velta, star wars, star, wars, freezer, project" />
+	<meta name="author" content="anzieu" />
+	<link rel="icon" type="image/png" href="./images/starW.png">
+
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="./styles.css">
+
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/dragdealer.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+
+	<style type="text/css">
+		
+		button.switch-right {
+			border: 2px solid #fff;
+			border-radius: 50%; 
+			white-space: nowrap;
+			background: transparent;
+			color: #fff;
+			font-family: 'Indie Flower', cursive;
+			position: absolute;
+			cursor: pointer;
+			font-size: 40px;
+			line-height: 1;
+			outline: none;
+			z-index: 1000;
+			opacity: 0.7;
+			right:20px;
+			top: 60%;
+			width:100px;
+			height: 70px;"
+		}
+
+		.show-content .current button.content-switch {
+			color: #fff;
+			border-color:#fff;
+		}
+
+		button.switch-left {
+			border: 2px solid #fff;
+			border-radius: 50%; 
+			white-space: nowrap;
+			background: transparent;
+			color: #fff;
+			font-family: 'Indie Flower', cursive;
+			position: absolute;
+			cursor: pointer;
+			font-size: 40px;
+			line-height: 1;
+			outline: none;
+			z-index: 1000;
+			opacity: 0.7;
+			left:20px;
+			top: 60%;
+			width:100px;
+			height: 70px;"
+		}
+
+	</style>
+
+	<script src="js/modernizr.custom.js"></script>
+</head>
+<body>
+	<div class="container">
+		<header id="header" style="width:100%;height:100%;left:0%;top:0%" class="codrops-header">
+			<button hidden class="slider-switch">Switch view</button>
+			<div id="title">
+
+
+				<span hidden id="track"></span>
+				<div id="timer">0:00</div>
+				<div id="duration">0:00</div>
+			</div>
+
+			<!-- Controls -->
+			<div  class="controlsOuter"  style="top:3%;" >
+				<div class="controlsInner">
+					<div id="loading"></div>
+					<div  style="cursor: pointer;" class="btn" id="playBtn"></div>
+					<div  style="cursor: pointer;" class="btn" id="pauseBtn"></div>
+					<div hidden class="btn" id="prevBtn"></div>
+					<div hidden class="btn" id="nextBtn"></div>
+				</div>
+			</div>
+
+			<div class="controlsOuter" style="bottom:5%" >
+				<div hidden class="btn slider-switch"  style="position:absolute;left:50%,bottom:20px" id="playlistBtn"></div>
+				<button hidden style="left:3%;position:absolute" id="switch" class="slider-switch">Switch view</button>
+				<div hidden class="btn" id="volumeBtn"></div>
+			</div>
+
+
+			<!-- Progress -->
+			<div id="waveform" style="z-index:1001"></div>
+			<div id="bar" style="z-index:1001" hidden> </div>
+			<div id="progress" style="z-index:1001"></div>
+
+			<!-- Playlist -->
+			<div hidden id="playlist">
+				<div id="list"></div>
+			</div>
+
+			<!-- Volume -->
+			<div id="volume" class="fadeout">
+				<div id="barFull" class="bar"></div>
+				<div id="barEmpty" class="bar"></div>
+				<div id="sliderBtn"></div>
+			</div>
+
+
+		</header>
+
+		<div id="overlay" class="overlay">
+			<div class="info">
+				<h1 style="font-family: 'Indie Flower',cursive;font-size:3em">La marche du JAWA</h1>
+
+				<h2>Instruction</h2>
+				<span class="info-keys">Utilise tes flèches & la barre d'espace</span>
+				<span class="info-switch">Zoom/Dezoom touche ECHAP</span>
+				<span class="info-drag">Fais défiler les slides</span>
+				<button>Décollage !</button>	
+			</div>
+		</div>
+
+		<div id="slideshow" class="dragslider">
+
+			<section class="img-dragger img-dragger-large dragdealer">
+				<div class="handle">
+
+
+					<div class="slide" data-content="content-1">
+						<div class="img-wrap" ><img src="images/preface.jpg" alt="img2"/></div>
+						<h2  style="font-size: 80px;top:30%">Préface<span style="font-size: 40px">Appuie sur la flèche du bas (ou sur le bouton)</span></h2>
+						<button id="switchBottomPreface" class="content-switch">Description</button>
+						<button class="switch-right">></button>
+					</div>
+
+					<div class="slide" data-content="content-2">
+						<div class="img-wrap"><img src="images/img3.jpg" alt="deux soleils"/></div>
+						<h2  style="font-size: 80px;top:35%">Episode 0.3<span style="font-size: 40px">La planète aux deux soleils (Feat. ZUKO)</span></h2>
+						<button class="switch-left"><</button>
+						<button class="content-switch">Description</button>
+						<button class="switch-right" >></button>
+					</div>
+
+					<div class="slide" data-content="content-3">
+						<div class="img-wrap"><img src="images/nonloin.jpg" alt="mos espa"/></div>
+						<h2  style="font-size: 80px;top:30%">Episode 0.7<span style="font-size: 40px">Non loin de Mos Espa...</span></h2>
+						<button class="switch-left"><</button>
+						<button class="content-switch">Description</button>
+						<button class="switch-right" >></button>
+					</div>
+
+					<div class="slide" data-content="content-4">
+						<div class="img-wrap"><img src="images/meca.jpg" alt="mecanique"/></div>
+						<h2  style="font-size: 80px;top:35%">Episode 1<span style="font-size: 40px">Mécanique (Feat. Mebodo)</span></h2>
+						<button class="switch-left"><</button>
+						<button class="content-switch">Description</button>
+						<button class="switch-right" >></button>
+					</div>
+					
+
+					<div class="slide" data-content="content-5">
+						<div class="img-wrap"><img src="images/Episode_2_Course_de_la_Boonta.jpg" alt="mecanique"/></div>
+						<h2  style="font-size: 80px;top:35%">Episode 2<span style="font-size: 40px">Course de la Boonta</span></h2>
+						<button class="switch-left"><</button>
+						<button class="content-switch">Description</button>
+						<button class="switch-right" >></button>
+					</div>
+
+					<div class="slide" data-content="content-6">
+						<div class="img-wrap"><img src="images/Episode_3_La_marche_du_Jawa.jpg" alt="mecanique"/></div>
+						<h2  style="font-size: 80px;top:35%">Episode 3<span style="font-size: 40px">La marche du Jawa</span></h2>
+						<button class="switch-left"><</button>
+						<button class="content-switch">Description</button>
+						<button class="switch-right" >></button>
+
+					</div>
+
+					<div class="slide" data-content="content-7">
+						<div class="img-wrap"><img src="images/Episode_4.jpg" alt="tempete"/></div>
+						<h2  style="font-size: 80px;top:35%">Episode 4<span style="font-size: 40px">Tempête (Feat. Headvings)</span></h2>
+						<button class="switch-left"><</button>
+						<button class="content-switch">Description</button>
+						<button class="switch-right" >></button>
+
+					</div>
+
+					<div class="slide" data-content="content-8">
+						<div class="img-wrap"><img src="images/Episode_5.jpg" alt="geonosis"/></div>
+						<h2  style="font-size: 80px;top:35%">Episode 5<span style="font-size: 40px">Pendant ce temps sur Geonosis…</span></h2>
+						<button class="switch-left"><</button>
+						<button class="content-switch">Description</button>
+						<button class="switch-right" >></button>
+					</div>
+
+
+					<div class="slide" data-content="content-9">
+						<div class="img-wrap"><img src="images/Episode_6.jpg" alt="route"/></div>
+						<h2  style="font-size: 80px;top:35%">Episode 6<span style="font-size: 40px">Route de nuit</span></h2>
+						<button class="switch-left"><</button>
+						<button class="content-switch">Description</button>
+						<button class="switch-right" >></button>
+					</div>
+
+
+					<div class="slide" data-content="content-10">
+						<div class="img-wrap"><img src="images/Episode_7.jpg" alt="radio"/></div>
+						<h2  style="font-size: 80px;top:35%">Episode 7<span style="font-size: 40px">Radio</span></h2>
+						<button class="switch-left"><</button>
+						<button class="content-switch">Description</button>
+						<button class="switch-right" >></button>
+					</div>
+
+
+					<div class="slide" data-content="content-11">
+						<div class="img-wrap"><img src="images/Episode_8.jpg" alt="radio"/></div>
+						<h2  style="font-size: 80px;top:35%">Episode 8<span style="font-size: 40px">Auprès du feu d’une tribu de moines B’omaar (Feat. Aerial Roots)</span></h2>
+						<button class="switch-left"><</button>
+						<button class="content-switch">Description</button>
+						<button class="switch-right" >></button>
+					</div>
+
+					<div class="slide" data-content="content-12">
+						<div class="img-wrap"><img src="images/final.jpg" alt="radio"/></div>
+						<h2  style="font-size: 80px;top:35%;color:black">Episode final<span style="font-size: 40px">Le réveil du Jawa (Feat. Lekeus)</span></h2>
+						<button class="switch-left"><</button>
+						<button class="content-switch">Description</button>
+						<button class="switch-right" >></button>
+					</div>
+
+					<div class="slide" data-content="content-13">
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dav9Vrwe-no" frameborder="0" allowfullscreen></iframe>
+						<button class="switch-left"><</button>
+					</div>
+
+				</div>
+			</section><!-- /img-dragger-->
+
+
+			<!-- Content section -->
+			<section class="pages">
+				<div class="content" data-content="content-1">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/preface.jpg" alt="img4"/></div>
+					<h2>Préface</h2>
+
+					<p>Les guerres de l'Étoile. Des rendez-vous qui traversent les frontières et les générations...</p>
+
+					<p> Mais au-delà de l'événement cinématographique que suscite chacun des épisodes à leur sortie plus ou moins controversée, Star Wars représente également une rencontre visuelle et sonore. Rencontre qui dépasse l'imaginaire ; des petits plaisirs éphémères pour nos yeux et nos oreilles. </p>
+
+					<p>Qui n'a pas, l'espace d'un court instant, détourné son esprit de l'histoire de l'Empire, des Rebelles, de la Force pour apprécier pleinement, sur une minuscule portion de scène, le corps décomposé d'un être expirant un dialecte aux sonorités étranges.
+					</p>
+
+					<p>Velta, Freezer, BK Art et Sir Jean Bessiere vous propose, au travers d'une série audio, un hommage à ce qui participe de manière implicite au charme de l'œuvre de George Lucas.
+					</p>
+					<p> <b>Rejoignez l'aventure et laissez vous porter par de nouvelles histoires parallèles de l'univers Star Wars, aujourd'hui fortement alimenté par les fans de la saga.</b></p>
+
+					<p><a href="https://medium.com/@alexis.anzieu/la-marche-du-jawa-e92c868d511" target="_blank" >Présentation du projet</a></p>
+
+				</div>
+
+				<div class="content"  data-content="content-2">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/2soleils2.jpg" alt="img4"/></div>
+
+					<h2>Episode 0.3<span style="color:white;font-size:50px">La planète aux deux soleils</span></h2>
+					<p style="text-align:left;color:white">
+						Tatooine, en l'An -37.<br>
+						Astre de la bordure extérieure.<br>
+						Oubliée.. de la république galactique.<br>
+						Où règnent.. canyons, pleines désertiques.<br>
+						Des contrebandiers, chasseurs de primes, et parieurs en tout genre.<br><br>
+
+						Les paris les plus fréquents se font sur les courses de bolides.<br>
+						Courses aussi rapides que dangereuses, nombreux sont ceux qui y laissent leur peau.<br>
+						Simples faits de jeux, règlements de comptes organisés,<br>
+						Tirs.. des redoutables Hommes des Sables cachés dans les falaises.<br><br>
+
+						Les Hommes des Sables sont nommés ainsi.. en raison de leur physique, très proche.. de celui des humains.<br>
+						D'autant qu'ils n'abordent jamais les villes.<br>
+						Leur véritable nom est "Tusken". <br>
+						S'ils tirent sur les podracers de la course.. de la Boonta Eve,<br>
+						C'est parce qu’ils n'ont pas apprécié la construction de l'arène de départ aux abords de la ville de Mos Espa,<br>
+						Construite.. sur un ancien site sacré.. de la religion Tusken.<br>
+						Ces pillards ont pris l'habitude de saboter la course.<br>
+						Et ils n'hésitent pas.. à tuer..<br>
+						Tout membre d'une autre espèce croisant leur chemin.<br>
+						Ils refusent tout contact.. ou commerce.. avec les autres.<br><br>
+
+						Les Jawas au contraire, seconds humanoïdes natifs de Tatooine, font affaire avec n’importe qui.<br>
+						Dit comme cela, leur vie peut sembler risquée, surtout, en ces lieux de la galaxie mais..<br>
+						Leur force de cohésion fait leur survie.<br>
+						D'un naturel plutôt peureux, rares sont les Jawas qui osent s'aventurer seul.<br>
+						Ils sont petits, maladroits, et s'organisent en tribus.<br>
+						Certains s'installent à la forteresse des Jawas.<br>
+						D'autres, traversent le désert dans de gigantesques chars de sable.<br>
+						Dans lesquels ils entassent leur marchandise,<br>
+						Des robots droïdes.. récupérés aux quatre coins du désert.<br>
+						Ils restent tout de même quelques indépendants, missionnaires, ou commerçants solitaires.<br><br>
+
+						Jawas, Tuskens, créatures marginales...<br>
+						Mais qui peuvent se venter d'être les seuls espèces civilisées natives de Tatooine..<br>
+						Ayant survécues.. en préservant leur communauté.<br>
+						D'aucun affirment qu'ils hériteraient d'un même ancêtre commun.<br>
+						Souverain de la planète.. aux deux soleils.<br>
+					</p>
+
+				</div>
+
+				<div class="content" data-content="content-3">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/2soleils2.jpg" alt="img4"/></div>
+					<h2>Episode 0.7<span  style="color:white;font-size:50px">Non loin de Mos Espa...</span></h2>
+					<p style="text-align:left;color:white">Non loin de Mos Espa,<br>
+						De jeunes Jawas ont assemblé leur propre Sandcrawler.<br>
+						Plus petit, plus rapide.<br>
+						Ils ne font que zoner autour des villes à bord de leur engin monté de toute pièce.<br>
+						En quête d'adrénaline et d'un moyen de s'extirper de leur quotidien,<br>
+						Ils décident de faire participer l'un d'eux, Velta, à la Boonta Eve.<br><br>
+
+						Aucun Jawa n'a jamais participé à une telle course et il est vrai.. que leurs <br>caractéristiques physiques.. ne leur en donnent hélas pas les réflexes nécessaires...
+					</p>
+
+				</div>
+
+
+				<div class="content" data-content="content-4">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/2soleils2.jpg" alt="img4"/></div>
+					<h2>Episode 1<span  style="color:white;font-size:50px">Mécanique (Feat. Mebodo)</span></h2>
+					<p style="text-align:left;color:white">
+						L’heure de la course n’est plus très loin. Pourtant, Velta n’a pas encore achevé les derniers réglages techniques de son podracer, baptisé.. Electronica 37.<br><br>
+
+						Pendant qu’à l’avant du sandcrawler, ses compères.. poussent la vitesse du véhicule au maximum pour arriver à l’arène dans les temps, Velta retape.. tant bien que mal son bolide.<br>
+
+					</p>
+
+				</div>
+
+				<div class="content" data-content="content-5">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/2soleils2.jpg" alt="img4"/></div>
+					<h2>Episode 2<span  style="color:white;font-size:50px">Course de la Boonta</span></h2>
+					<p style="text-align:left;color:white">
+						Tous les modules de course sont en place. Les spectateurs aussi.<br>
+						<br>
+						Les concurrents font chauffer leurs moteurs, s’observent, se concentrent.<br><br>
+
+						Puis le feu vert est donné. Tous démarrent.. dans un vacarme assourdissant.<br><br>
+
+						Malgré la tension, Velta rentre sereinement dans cette course, bien qu’en stagnant aux dernières places. Son bolide n’est pas très puissant, mais l’allure suffit.. à bercer l’âme du Jawa. Les soleils se couchent, l’air devient agréable.. à respirer.<br><br>
+
+						Soudain, il est percuté, aux abords du Virage de la Dune. Il est.. comme réveillé, pris de panique ! Mais il décide de tenir tête à son vis-à-vis… Très vite dépassé, il perd le contrôle.. de l’Electronica 37.<br><br>
+
+						La chute est brève, et brutale. Il n’aura même pas eu le temps de distinguer son rival. Velta est hors circuit.<br>
+
+
+					</p>
+
+				</div>
+
+
+				<div class="content" data-content="content-6">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/2soleils2.jpg" alt="img4"/></div>
+					<h2>Episode 3<span  style="color:white;font-size:50px">La marche du Jawa</span></h2>
+					<p style="text-align:left;color:white">
+
+						Tous les coureurs sont loin désormais. Le silence s’est installé, presque écœurant sur le canyon aride. Un canyon qui n’abrite plus en cet instant qu’un Jawa peinant à reprendre connaissance. Ses yeux.. s’ouvrent.. lourdement.. sur la vue de son bolide en ruine. Velta se relève, et prend conscience.. qu’il a volontairement mis sa vie en jeu.
+						<br><br>
+						Sur un cri de désespoir, il s’en va, librement, dans le désert sans fin.
+
+
+					</p>
+
+				</div>
+
+				<div class="content" data-content="content-7">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/2soleils2.jpg" alt="img4"/></div>
+					<h2>Episode 4<span  style="color:white;font-size:50px">Tempête (Feat. Headvings)</span></h2>
+					<p style="text-align:left;color:white">
+
+						Comme l’exprime ce jeune autochtone, il n’est cependant pas si aisé que cela d’affronter seul le désert…<br><br>
+
+						Sur cette planète, de violentes tempêtes de sable viennent fréquemment rappeler à quel point la nature y est hostile.<br><br>
+
+						Quelques grains dansent à fleur de dune, et il faut peu de temps pour que la ronde s’élève, tournoie, et ne fasse bientôt plus qu’une !<br><br>
+
+						De nombreuses petites grottes se sont formées au cours des millions d’années de déplacement des roches. Velta se hâte.. vers la première caverne venue. A l’abri de cette antre, le Jawa observe depuis l’intérieur.. le chaos régnant au dehors.
+
+					</p>
+
+				</div>
+
+				<div class="content" data-content="content-8">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/2soleils2.jpg" alt="img4"/></div>
+					<h2>Episode 5<span  style="color:white;font-size:50px">Pendant ce temps sur Geonosis…</span></h2>
+					<p style="text-align:left;color:white">
+
+						Quelques pas seulement à l’échelle de la galaxie, séparent Velta.. d’un de ses semblables, pris en otage sur une planète voisine, dénommée.. Geonosis.<br><br>
+
+						Un mercenaire, membre d’une confrérie Jawa indépendante a été capturé par les hommes du roi local, Poggle le Bref, alors qu’il était en mission secrète. Pris en flagrant délit dans les sous-sols d’une usine de fabrique de droïdes appartenant à la Fédération du Commerce, il a refusé de parler, et a été emprisonné. L’heure.. est venue pour lui de subir le châtiment.. réservé à tous les opposants : se retrouver seul, dans les arènes de la mort, face aux pires créatures de la galaxie.
+
+
+					</p>
+
+				</div>
+
+				<div class="content" data-content="content-9">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/2soleils2.jpg" alt="img4"/></div>
+					<h2>Episode 6<span  style="color:white;font-size:50px">Route de nuit</span></h2>
+					<p style="text-align:left;color:white">
+
+						La tempête s’apaise enfin. A la nuit tombée, Velta décide de reprendre son chemin. Il est toujours plus sûr de rester éveillé et sur une zone dégagée car.. qui sait quelle créature pourrait surgir des sombres recoins rocailleux… Mieux vaut progresser. Une légère brise vient clore les dernières rafales de sable, et la lumière n’est plus. Le Jawa se laisse guider par son instinct, et par les reliefs encore perceptibles du désert.
+
+
+					</p>
+
+				</div>
+
+				<div class="content" data-content="content-10">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/2soleils2.jpg" alt="img4"/></div>
+					<h2>Episode 7<span  style="color:white;font-size:50px">Radio</span></h2>
+					<p style="text-align:left;color:white">
+
+						Bientôt, il croit distinguer au loin comme des scintillements qui l’intriguent. Il veut savoir. De ce point incertain des sons lui parviennent, d’abord faibles, puis soudain si proches.<br><br>
+
+						Il heurte un objet, se penche, s’en empare. Comme il est lourd ! Un instant interdit, Velta sans plus tarder s’enfuit. Comme en quête d’un abri, il contourne par les rochers plus à l’ouest.<br><br>
+
+						Velta s’immobilise, l’observe enfin. Il actionne quelques boutons au hasard. De l’objet noir, oblong de forme, sourdent des bribes de voix par intermittence.<br><br>
+
+						Sur l'émetteur radio, il est écrit.. en lettres capitales rouges : Czerk R73
+
+
+
+					</p>
+
+				</div>
+
+				<div class="content" data-content="content-11">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/2soleils2.jpg" alt="img4"/></div>
+					<h2>Episode 8<span  style="color:white;font-size:50px">Auprès du feu d’une tribu de moines B’omaar (Feat. Aerial Roots)</span></h2>
+					<p style="text-align:left;color:white">
+
+						Le R73 continue de brailler. Velta finit par s’engouffrer dans un étroit passage rocheux. Une faible et oscillante lumière est son unique repère, jusqu’à ce que retentissent des cris.. au sein du corridor. Puis des percussions. Cette fois encore, il saura. <br><br>
+
+						La cadence prend fin. L’ouverture est toute proche. Ebloui à un dernier détour, quelques secondes suffisent pour que sa vision redevienne nette. Un immense feu. Et tout autour, comme dans une clairière de sable, des êtres, sous des capuches. L’un deux fait résonner sur la paroi de rocaille un chant.. d’une énergie.. prodigieuse. <br><br>
+
+						Velta est saisi. <br><br>
+
+						Nul ne semble l’avoir remarqué ; tous chantent en cœur. <br><br>
+
+						Le Jawa s’abandonne au rituel, à la beauté du son. Engourdi, il s’endort.
+
+
+					</p>
+
+				</div>
+
+				<div class="content" data-content="content-12">
+					<div style="opacity: 0.5" class="img-wrap"><img src="images/2soleils2.jpg" alt="img4"/></div>
+					<h2>Episode Final<span  style="color:white;font-size:50px">Le réveil du Jawa (Feat. Lekeus)</span></h2>
+					<p style="text-align:left;color:white">
+
+						Les premiers rayons de Tatoo II dardent les collines alentours. La lumière frappe aux paupières du Jawa. La chaleur l’envahit peu à peu. Et puis dans son sommeil troublé, comme des bruissements d’eau ; ces.. vagues.. qu’évoquait le vieux Tita.<br><br>
+						Poursuite d’un rêve ? Eveil d’une conscience ?
+
+					</p>
+
+				</div>
+
+			</section>
+		</div>
+	</div><!-- /container --> 
+	<script src="js/siriwave.js"></script>
+	<script src="js/player.js"></script>
+	<script src="js/dragdealer.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/dragslideshow.js"></script>
+	<script src="js/howler.js"></script>
+
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-90609904-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+
+	<script>
+
+
+
+		(function() {
+
+
+
+			var started = false; 
+
+			var overlay = document.getElementById( 'overlay' ),
+			header = document.getElementById( 'header' ),
+			play = document.getElementById( 'playBtn' ),
+			overlayClose = overlay.querySelector( 'button' ),
+			switchLeft = document.querySelectorAll( '.switch-left' ),
+			switchRight = document.querySelectorAll( '.switch-right' ),
+			header = document.getElementById( 'header' )
+			switchBtnn = document.getElementById( 'switch' );
+			toggleBtnn = function() {
+				if( slideshow.isFullscreen ) {
+					classie.add( switchBtnn, 'view-maxi' );
+				}
+				else {
+					classie.remove( switchBtnn, 'view-maxi' );
+				}
+			},
+			toggleCtrls = function() {
+				if( !slideshow.isContent ) {
+					classie.add( header, 'hide' );
+				}
+			},
+			toggleCompleteCtrls = function() {
+				if( !slideshow.isContent ) {
+					classie.remove( header, 'hide' );
+				}
+			},
+			slideshow = new DragSlideshow( document.getElementById( 'slideshow' ), { 
+
+						// toggle between fullscreen and minimized slideshow
+						onToggle : toggleBtnn,
+						// toggle the main image and the content view
+						onToggleContent : toggleCtrls,
+						// toggle the main image and the content view (triggered after the animation ends)
+						onToggleContentComplete : toggleCompleteCtrls
+					}),
+			toggleSlideshow = function() {
+				slideshow.toggle();
+				toggleBtnn();
+			},
+			closeOverlay = function() {
+				classie.add( overlay, 'hide' );
+				started = true; 
+				slideshow.disabled=false; 
+			};
+
+				// toggle between fullscreen and small slideshow
+				switchBtnn.addEventListener( 'click', toggleSlideshow );
+
+				switchRight.forEach(key=> key.addEventListener('click',right));
+				switchLeft.forEach(key=> key.addEventListener('click',left));
+
+				function right(){
+					var e = new Event("keydown");
+				  e.key="ArrowRight";    // just enter the char you want to send 
+				  e.keyCode=39;
+				  e.which=39;
+				  e.altKey=false;
+				  e.ctrlKey=true;
+				  e.shiftKey=false;
+				  e.metaKey=false;
+				  e.bubbles=true;
+				  document.dispatchEvent(e);
+				}; 
+
+				function left(){
+					var e = new Event("keydown");
+				  e.key="ArrowLeft";    // just enter the char you want to send 
+				  e.keyCode=37;
+				  e.which=37;
+				  e.altKey=false;
+				  e.ctrlKey=true;
+				  e.shiftKey=false;
+				  e.metaKey=false;
+				  e.bubbles=true;
+				  document.dispatchEvent(e);
+				}
+
+
+		    	//keyCode for esc
+		    	document.addEventListener('keyup', function(e) {
+
+		    		if (started==true){
+		    			e = e || window.event;
+
+		    			if (e.keyCode == '27') {
+		    				slideshow.toggle();
+		    				toggleBtnn();
+		    			} 
+		    		}
+
+		    	});
+
+		    	header.setAttribute("hidden",""); 
+				// close overlay
+				overlayClose.addEventListener( 'click', closeOverlay );
+
+
+
+			}());
+		</script>
+	</body>
+	</html>
